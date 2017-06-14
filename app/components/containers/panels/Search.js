@@ -7,6 +7,15 @@ class Search extends React.Component {
     super();
 
     }
+
+        handleSubmit(event) {
+
+        event.preventDefault();
+
+        this.props.setTerm(this.state.term + "&begin_date=" + this.state.startYear + "0101" + "&end_date=" + this.state.endYear + "0101");
+
+        this.setState({term: "", startYear: "", endYear: ""});
+    }
     
     render() {
         return (
